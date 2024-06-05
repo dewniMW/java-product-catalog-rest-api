@@ -63,3 +63,23 @@ paths:
           description: Successful response
           content:
             application/json: {}
+  /proxyGetNorthStarClaims:
+    post:
+      operationId: postProxygetnorthstarclaims
+      tags:
+        - northstar
+      requestBody:
+        content:
+          application/json:
+            schema: {}
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+        '500':
+          description: Internal server error
+          content:
+            text/plain:
+              schema:
+                type: string
