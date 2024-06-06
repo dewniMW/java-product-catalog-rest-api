@@ -12,8 +12,8 @@ public class AsgardeoUserCreationCompletedService {
     @Autowired
     private AsgardeoUserCreationCompletedRepository repository;
 
-    public AsgardeoUserCreationCompleted saveProduct(AsgardeoUserCreationCompleted northStar) {
-        System.out.println("---------------  NorthStarService.saveProduct");
-        return repository.save(northStar);
+    public AsgardeoUserCreationCompleted find(String userName, String correlationID) {
+        System.out.println("---------------  AsgardeoUserCreationCompletedService.find");
+        return repository.find(userName, correlationID);
     }
 }
