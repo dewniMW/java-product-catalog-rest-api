@@ -1,23 +1,25 @@
 package com.wso2.choreo.sample.springboot.controller;
 
-import com.wso2.choreo.sample.springboot.model.NorthStar;
-import com.wso2.choreo.sample.springboot.model.Product;
-import com.wso2.choreo.sample.springboot.service.NorthStarService;
+import com.wso2.choreo.sample.springboot.model.GetNorthStarClaims;
+import com.wso2.choreo.sample.springboot.service.GetNorthStarClaimsService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/proxyGetNorthStarClaims")
-public class NorthStarController {
+public class GetNorthStarClaimsController {
 
     @Autowired
-    private NorthStarService service;
+    private GetNorthStarClaimsService service;
 
     @PostMapping
-    public NorthStar addProduct(@RequestBody NorthStar northStar) {
+    @ResponseStatus(HttpStatus.CREATED)
+    public GetNorthStarClaims addProduct(@RequestBody GetNorthStarClaims northStar) {
         return service.saveProduct(northStar);
     }
 }

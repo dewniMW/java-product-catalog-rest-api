@@ -83,3 +83,36 @@ paths:
             text/plain:
               schema:
                 type: string
+  /isAsgardeoUserCreationCompleted:
+    get:
+      operationId: getIsasgardeousercreationcompleted
+      tags:
+        - northstar
+      parameters:
+        - name: userName
+          in: query
+          required: true
+          style: form
+          explode: true
+          schema:
+            type: string
+        - name: correlationID
+          in: query
+          required: true
+          style: form
+          explode: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Ok
+          content:
+            application/json:
+              schema:
+                type: object
+        '500':
+          description: Internal server error
+          content:
+            text/plain:
+              schema:
+                type: string
