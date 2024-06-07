@@ -9,11 +9,20 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class AsgardeoUserCreationCompletedService {
+
     @Autowired
     private AsgardeoUserCreationCompletedRepository repository;
 
     public AsgardeoUserCreationCompleted find(String userName, String correlationID) {
+
         System.out.println("---------------  AsgardeoUserCreationCompletedService.find");
         return repository.find(userName, correlationID);
+    }
+
+    public String find2(String userName, String correlationID) {
+
+        String status = repository.find2(userName, correlationID);
+        System.out.println("---------------  AsgardeoUserCreationCompletedService.find2--- status: " + status);
+        return status;
     }
 }

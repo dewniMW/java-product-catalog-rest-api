@@ -25,11 +25,18 @@ public class AsgardeoUserCreationCompletedController {
     @Autowired
     private AsgardeoUserCreationCompletedService service;
 
-    @GetMapping
-    public AsgardeoUserCreationCompleted find(@RequestParam("userName") String userName,
-                                              @RequestParam("correlationID") String correlationID) {
+//    @GetMapping
+//    public AsgardeoUserCreationCompleted find(@RequestParam("userName") String userName,
+//                                              @RequestParam("correlationID") String correlationID) {
+//
+//        return service.find(userName, correlationID);
+//    }
 
-        return service.find(userName, correlationID);
+    @GetMapping
+    public String find(@RequestParam("userName") String userName,
+                                              @RequestParam("correlationID") String correlationID) {
+        return service.find2(userName, correlationID);
+        //return "true";
     }
 
 }
